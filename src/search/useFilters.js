@@ -13,7 +13,11 @@ function filterResults(results, filters) {
 export default function useFilters(searchResults) {
   const filters = ref([])
 
-  const applyFilters = (filter) => filters.value.push(filter)
+  // const applyFilters = (filter) => filters.value.push(filter)
+  const applyFilters = (filter) => {
+    clearFilters()
+    filters.value.push(filter)
+  }
   const clearFilters = () => { filters.value = [] }
 
   onMounted(() => console.log('Mounted: useFilters'))
