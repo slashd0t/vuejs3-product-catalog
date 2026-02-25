@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <img class="logo" src="./logo.png" alt="Logo" />
-    <router-link to="/catalog" routerLinkActive="active">Catalog</router-link>
+    <!-- <router-link to="/catalog" routerLinkActive="active">Catalog</router-link> -->
     <router-link to="/search" routerLinkActive="active">Search</router-link>
     <div><router-link to="/cart" routerLinkActive="active">Cart</router-link></div>
   </div>

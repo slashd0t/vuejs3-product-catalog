@@ -21,7 +21,7 @@ const router = createRouter({
     },
     {
       path: '/',
-      redirect: '/catalog',
+      redirect: '/search',
     },
   ],
 })
