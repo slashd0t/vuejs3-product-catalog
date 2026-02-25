@@ -16,10 +16,16 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Run the frontend
 
 ```sh
 npm run dev
+```
+
+### Run the backend
+
+```sh
+npm run dev:api
 ```
 
 ### Compile and Minify for Production

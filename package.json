@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "dev:api-install2": "npm install --workspace=./api-server",
+    "dev:api-install": "npm --prefix api-server install",
     "dev:api": "npm start -w api-server",
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
