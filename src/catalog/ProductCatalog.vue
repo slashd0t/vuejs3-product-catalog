@@ -15,17 +15,38 @@
 <!-- Composition API -->
 <script setup>
 import ProductInfo from './product-info/ProductInfo.vue'
+// import products from './product-data.js'
 
-import { useProductStore } from '@/stores/product-options.js' // load data by using synchronous action
-import { useCartStore } from '@/stores/cart-options.js'
+import { useProductStore } from '@/stores/product.js' // load data by using synchronous action
+import { useCartStore } from '@/stores/cart.js'
 
 const cartStore = useCartStore()
 const productStore = useProductStore()
 
 productStore.getProducts()
 
-const { addToCart } = cartStore // or by calling cartStore.addToCart(product)
+function addToCart(product) {
+  // using approach #1: using push() simple approach
+  // cartStore.cart.push({ ...product })
+  // console.log('cartStore.cart.length:', cartStore.cart.length)
+  
+  // using approach #2: using spread
+  // const newCart = [...cartStore.cart, product]
+  // cartStore.cart = newCart
+  
+  // using approach #3: $patch({}) pass by object - use to modify multiple state properties on the store
+  // const newCart = [...cartStore.cart, product]
+  // cartStore.$patch({
+  //   cart: newCart,
+  //   anotherProperties: 'foobar',
+  // })
 
+  // using approach #4: $patch((state)) pass by function 
+  cartStore.$patch((state) => {
+    state.cart.push({ ...product })
+    state.anotherProperties = 'foobar'
+  })
+}
 </script>
 
 <style scoped>

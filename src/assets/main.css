@@ -78,34 +78,15 @@ button:disabled {
 }
 
 button:hover {
-  background-color:var(--color-primary);
+  color: var(--color-secondary-dark);
 }
 
 button.cta {
   position: relative;
   font-family: Arial, Helvetica, sans-serif;
-  background-color:seagreen;
+  background-color: var(--color-primary);
   color: #ddd;
   transition-duration: 0.4s;
-}
-
-.clearbtn {
-  color: #fff;
-  font-size: 13px !important;
-  background-color:#777;
-}
-
-.clearbtn:hover {
-  color: #fff;
-  background-color:#444
-}
-
-button.cta-tab {
-  background-color:var(--color-primary);
-}
-
-button.cta-tab:hover {
-  color:#fff;
 }
 
 button.cta::after {
